@@ -1,0 +1,37 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  spree:
+    file: Archivo
+    admin:
+      tab:
+        import: Importar
+    spree_importer:
+      products:
+        import:
+          title: Cargar Productos
+          download_message: Descargar un archivo de ejemplo
+          template_link_text: aquí
+          submit_text: Iniciar
+      messages:
+        unknown_file_type: "Tipo de archivo desconocido: %{filename}"
+        notification:
+          error: "Error in loading: %{filename}"
+          success: "Finished reading: %{filename}"
+          info_error: 'But with the following errors:'
+          readed: 'It has been completely read the file:'
+          message: 'Error'
+          data: 'Data'
+          row: 'Row'
+        controller:
+          file_required: Debe subir un archivo
+          importing: El archivo se ha añadido correctamente a la cola
+          error: El archivo no se añadió a la cola
+      logs:
+        reading: "READING: %{filename}"
+        loading_file: "    Open file time: %{time}"
+        progress: "    %{filename}: %{row}/%{rows} - %{time} | %{data}"
+        error: "    Row: %{row}/%{rows} -> %{message}"
+        done: "    READ done: %{filename}"
+        already_exists: "    Product already exists: %{row}/%{rows} | %{data}"

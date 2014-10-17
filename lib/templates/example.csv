@@ -1,0 +1,4 @@
+name,sku,prototype,master_price,available_on,shipping_category
+First product,,,100.0,,1
+Second product,sku1,1,200.0,9/7/14 0:00,1
+Third product,sku2,1,300.0,9/7/14 0:00,1

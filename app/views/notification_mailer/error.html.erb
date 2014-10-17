@@ -1,0 +1,23 @@
+<p>
+  <%= I18n.t(:readed, scope: [:spree, :spree_importer, :messages, :notification]) %>
+  <strong><%= @filename %></strong>
+</p>
+<p><%= I18n.t(:info_error, scope: [:spree, :spree_importer, :messages, :notification]) %></p>
+
+<table>
+  <thead>
+    <th><%= I18n.t(:row, scope: [:spree, :spree_importer, :messages, :notification]) %></th>
+    <th><%= I18n.t(:message, scope: [:spree, :spree_importer, :messages, :notification]) %></th>
+    <th><%= I18n.t(:data, scope: [:spree, :spree_importer, :messages, :notification]) %></th>
+  </thead>
+
+  <tbody>
+    <% @failed_rows.each do |error| %>
+      <tr>
+        <td><%= error[:row_index] %></td>
+        <td><%= error[:message] %></td>
+        <td><%= error[:data].inspect %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

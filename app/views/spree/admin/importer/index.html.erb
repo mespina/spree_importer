@@ -1,0 +1,33 @@
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
+
+<% content_for :page_title do %>
+  <%= Spree.t("spree_importer.products.import.title") %>
+<% end %>
+
+<%= form_tag admin_importer_index_path, multipart: true, use_route: "spree" do |f| %>
+  <fieldset class="new_import">
+    <div data-hook="admin_importer_form" class="row">
+      <div data-hook="admin_importer_file", class='six columns'>
+        <div class="field">
+          <%= label_tag :file, raw(Spree.t(:file) + content_tag(:span, ' *',  :class => "required")) %>
+          <%= file_field_tag :file, class: 'fullwidth' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-buttons actions filter-actions" data-hook="buttons">
+      <%= button Spree.t("spree_importer.products.import.submit_text"), 'ok' %><span class="or"><%= Spree.t(:or) %></span>
+      <%= link_to_with_icon 'remove', Spree.t('actions.cancel'), spree.admin_products_path, :class => 'button' %>
+    </div>
+
+  </fieldset>
+<% end %>
+
+<br>
+<br>
+<br>
+
+<p>
+  <%= Spree.t("spree_importer.products.import.download_message") %>
+  <%= link_to Spree.t("spree_importer.products.import.template_link_text"), template_admin_importer_index_path%>
+</p>

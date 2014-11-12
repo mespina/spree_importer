@@ -9,11 +9,13 @@ require 'spree_importer/mappers/product_mapper'
 require 'spree_importer/mappers/taxon_mapper'
 require 'spree_importer/mappers/option_value_mapper'
 require 'spree_importer/mappers/aditional_mapper'
+require 'spree_importer/mappers/property_mapper'
 
 require 'spree_importer/parsers/base_parser'
 require 'spree_importer/parsers/array_parser'
 require 'spree_importer/parsers/boolean_parser'
 require 'spree_importer/parsers/date_time_parser'
+require 'spree_importer/parsers/string_parser'
 
 require 'spree_importer/product_identifier'
 require 'spree_importer/importer'

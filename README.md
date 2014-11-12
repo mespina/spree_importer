@@ -86,6 +86,22 @@ end
 ```
 
 
+ToDo
+----
+
+* SpreeImporter::Importer deberia ser un modulo o una clase, de forma de permitir tener mas de una clase de import, de esta forma podriamos permitir tener diferentes mecanismos de carga masiva, ej: productos, taxons, prototipos, propiedades, etc.
+* Mejorar default_hash para quitar componente no necesarias y agregar lo necesario para futuros reviews.
+* Detectar Mappers de forma automatica en funcion del nombre de las columnas, idealmente:
+  * poder detectar automaticamente las columnas
+  * poder definir/registrar Mappers customs para deteccion automatica
+  * poder sobreescribir detección automatica
+* Quitar dependencia de sidekiq, (ver: activejob)
+* Bucket para obtener images (AS3, dropbox, etc)
+* Importer puede ser una clase, de esta forma se puede:
+  * recargar la pagina para tener una status de progreso
+  * tener un log con los problemas en cada linea
+  * se podria volver a cargar la misma linea en otro momento
+
 
 
 Testing

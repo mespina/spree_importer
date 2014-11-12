@@ -25,6 +25,9 @@ module SpreeImporter
 
         # Verbose
         preference :verbose, :boolean, :default => true
+
+        # Setting to skip loading if product already exists
+        preference :skip_if_product_exists, :boolean, :default => true
       end
     end
 

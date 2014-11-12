@@ -44,13 +44,12 @@ module SpreeImporter
       2.upto(@spreadsheet.last_row).each do |row_index|
         Spree::Product.transaction do
           begin
-            if @product_identifier.exists?(@spreadsheet, row_index)
+            if Spree::Config.skip_if_product_exists and @product_identifier.exists?(@spreadsheet, row_index)
               puts I18n.t(:already_exists, scope: [:spree, :spree_importer, :logs], filename: @filename, row: row_index, rows: @spreadsheet.last_row, data: @spreadsheet.row(row_index))
               next
             end
 
             data = default_hash.deep_dup
-
 
             @mappers.each do |mapper|
               mapper.load @spreadsheet, row_index, data
@@ -146,6 +145,8 @@ module SpreeImporter
 
       # Is responsible for creating the Product
       def make_products row
+        return if row[:product][:id]
+
         before_make_products row
 
         product = Spree::Product.create row[:product]
